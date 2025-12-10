@@ -115,6 +115,10 @@
             width:120px;height:120px;border-radius:18px;background:linear-gradient(135deg,var(--accent-2),var(--accent));
             display:block;flex-shrink:0;
             box-shadow: 0 10px 30px rgba(0,0,0,0.55);
+            overflow:hidden;
+        }
+        .avatar img{
+            width:100%;height:100%;object-fit:cover;display:block;
         }
         .meta{color:var(--muted);font-size:14px;text-align:center}
         .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
@@ -204,7 +208,7 @@
                 </div>
 
                 <aside class="profile" aria-labelledby="profile-name">
-                    <div class="avatar" role="img" aria-label="Avatar placeholder"></div>
+                    <div class="avatar" role="img" aria-label="Me"><img src="Family30thBdayMe.JPG" alt="Me"></div>
                     <div id="profile-name" style="font-weight:800;font-size:18px">Jacob Berry</div>
                     <div class="meta">Computer Science Student at Cal State Dominguez Hills.</div>
                     <div class="chips" style="margin-top:8px">
@@ -239,7 +243,12 @@
 
             <section id="about" class="card">
                 <h2 style="margin-top:0">About</h2>
-                <p class="lead">Hello World! My name is Jacob Berry. I am a Computer Science Student at Cal State Dominguez Hills that is passionate about software development and technology. I have some experience in languages like C/C++ JavaScript, Python, and C#. I have most of my experience in Java. </p>
+                <p class="lead">Hello World! My name is Jacob Berry. I am a Computer Science Student at Cal State Dominguez Hills that is passionate about software development and technology. 
+                    I have some experience in languages like C/C++, JavaScript, Python, and C#. I have most of my experience in Java. I am eager to learn and grow in the field.
+                    I am earning my degree in computer science to get a solid foundation in the principles and practices of software development and engineering.
+                    I have always had a passion for game development and software development in general. I have dabbled in game devlopment using blitz basic and unity.
+                    By the end my educational journey I hope to have developed enough skills to be dutifully employed, able to create complex projects that others will consume,
+                    and be able to contribute meaningfully to the world with intuitive projects that users can enjoy and benefit from.</p>
             </section>
 
             <section id="contact" class="card">
