@@ -129,6 +129,7 @@
             grid-template-columns:repeat(3,1fr);
             gap:18px;
         }
+        .stack{display:grid;gap:18px}
         @media (max-width:980px){
             .hero{grid-template-columns: 1fr;}
             .grid{grid-template-columns:repeat(2,1fr)}
@@ -147,8 +148,29 @@
             box-shadow: 0 6px 20px rgba(3,6,15,0.6);
         }
         .project-thumb{
-            height:140px;border-radius:10px;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-            display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700;margin-bottom:12px;border:1px solid rgba(255,255,255,0.02)
+            height:320px;border-radius:10px;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700;margin-bottom:12px;border:1px solid rgba(255,255,255,0.02);
+            overflow:hidden;position:relative;
+        }
+        .project-thumb video{
+            width:100%;height:100%;object-fit:contain;display:block;
+        }
+        .video-controls{
+            position:absolute;bottom:12px;left:50%;transform:translateX(-50%);
+            display:flex;gap:8px;z-index:10;
+        }
+        .play-btn{
+            background:linear-gradient(90deg,var(--accent),var(--accent-2));
+            color:#022;padding:8px 16px;border-radius:8px;font-weight:700;
+            border:none;cursor:pointer;font-size:14px;
+            box-shadow:0 4px 12px rgba(109,166,146,0.3);
+            transition:transform 0.15s ease;
+        }
+        .play-btn:hover{transform:scale(1.05)}
+        .play-btn:active{transform:scale(0.98)}
+        .fullscreen-btn{
+            background:#0b1220;color:#e6eef6;padding:8px 12px;border-radius:8px;font-weight:700;
+            border:1px solid rgba(255,255,255,0.08);cursor:pointer;font-size:14px;
         }
         .project-title{font-weight:700;margin:0 0 6px 0}
         .project-desc{color:var(--muted);font-size:13px;margin:0}
@@ -208,8 +230,7 @@
                 </div>
 
                 <aside class="profile" aria-labelledby="profile-name">
-                    <div class="avatar" role="img" aria-label="Me"><img src="ENG350Project3
-/MeOn30thBday.png" alt="Me"></div>
+                    <div class="avatar" role="img" aria-label="Me"><img src="MeOn30thBday.png" alt="Me"></div>
                     <div id="profile-name" style="font-weight:800;font-size:18px">Jacob Berry</div>
                     <div class="meta">Computer Science Student at Cal State Dominguez Hills.</div>
                     <div class="chips" style="margin-top:8px">
@@ -217,29 +238,6 @@
                         <div class="chip">Remote</div>
                     </div>
                 </aside>
-            </section>
-
-            <section id="work" class="card">
-                <h2 style="margin-top:0">Selected projects</h2>
-                <div class="grid" role="list">
-                    <article class="card" role="listitem">
-                        <div class="project-thumb">Project A</div>
-                        <h3 class="project-title">Project A</h3>
-                        <p class="project-desc">This is where project A will go.</p>
-                    </article>
-
-                    <article class="card" role="listitem">
-                        <div class="project-thumb">Project B</div>
-                        <h3 class="project-title">Project B</h3>
-                        <p class="project-desc">This is where project B will go.</p>
-                    </article>
-
-                    <article class="card" role="listitem">
-                        <div class="project-thumb">Project C</div>
-                        <h3 class="project-title">Project C</h3>
-                        <p class="project-desc">This is where project C will go .</p>
-                    </article>
-                </div>
             </section>
 
             <section id="about" class="card">
@@ -250,6 +248,63 @@
                     I have always had a passion for game development and software development in general. I have dabbled in game devlopment using blitz basic and unity.
                     By the end my educational journey I hope to have developed enough skills to be dutifully employed, able to create complex projects that others will consume,
                     and be able to contribute meaningfully to the world with intuitive projects that users can enjoy and benefit from.</p>
+            </section>
+
+            <section id="experience" class="card">
+                <h2 style="margin-top:0">Experience</h2>
+                <p class="project-desc">Experience have mainly been student projects. When I attended Los Angeles Trade Technical College (LATTC), I learned languages such as C, C++, and Java. I also have experience in python via coursework. I have taken C# and Python courses where I made small projects for my final examination processes. 
+                    I have taken full stack web development courses where I learned HTML, CSS, and JavaScript for front end development. For back end development, I gained experience with MongoDB (NoSQL database), Express.js (back end framework), Angular.js (front end framework), and Node.js (JavaScript runtime environment for server-side hosting and execution). I have also taken a course in Android development using the Java language.
+                    While attending Cal State Dominguez Hills, I have taken courses in data structures, algorithms, discrete structures, assembly, and object-oriented programming with strong experience in Java. I have also taken programming courses using the C and python languages. I have also taken courses in assembly and RISC-V assembly. 
+                </p>
+            </section>
+            
+            <section id="coursework" class="card">
+                <h2 style="margin-top:0">Coursework</h2>
+                <p class="project-desc">Data structures, algorithms, full-stack web development (HTML/CSS/JS) with mean stack, intro to game development, Object-Oriented Programming with strong experience in Java, Assembly and RISC-V assembly. Android development using the Java language.</p>
+            </section>
+
+            <section id="focus" class="card">
+                <h2 style="margin-top:0">Focus</h2>
+                <p class="project-desc">Creating usable readable code that is easily maintained and modified. I am also focused on learning best practices and creating more projects during and after my time at university.</p>
+            </section>
+
+            <section id="work">
+                <h2 style="margin-top:0"> Projects</h2>
+                <div class="stack" role="list">
+                    <section class="card" role="listitem">
+                        <div class="project-thumb">
+                            <video id="shapesVideo" loop muted playsinline>
+                                <source src="Shapes movement Demo.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-controls">
+                                <button class="play-btn" onclick="toggleVideo('shapesVideo', this)">▶ Play Demo</button>
+                                <button class="fullscreen-btn" onclick="toggleFullscreen('shapesVideo')">⛶ Fullscreen</button>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Blitz3D Shapes Demo</h3>
+                        <p class="project-desc">This project was one of my first working projects inside of a game engine. In this game development course we utilized the Blitz3D engine
+                            to create functional shapes in a 3D environment. This project was completed back in the summer of 2023 using the Blitz3D basic programming language.</p>
+                    </section>
+
+                    <section class="card" role="listitem">
+                        <div class="project-thumb">
+                            <video id="rpgVideo" loop muted playsinline>
+                                <source src="RPG demo.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-controls">
+                                <button class="play-btn" onclick="toggleVideo('rpgVideo', this)">▶ Play Demo</button>
+                                <button class="fullscreen-btn" onclick="toggleFullscreen('rpgVideo')">⛶ Fullscreen</button>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Open Source RPG Demo</h3>
+                        <p class="project-desc">This demo video showcases a open sourced text style rpg game that was created by our class during the spring of 2025. 
+                            The specific section being displayed is the portion that I was responsible for. The game is a text-based rpg that allows the player to make choices that affect the story and outcome of the game.
+                            We utilized the C language for this project. </p>
+                        </p>
+                    </section>
+                </div>
             </section>
 
             <section id="contact" class="card">
@@ -267,14 +322,40 @@
             </section>
 
             <footer>
-                © <span id="year"></span> Jacob Berry — Built with HTML & CSS
-            </footer>
+                © <span id="year"></span> Jacob Berry
         </main>
     </div>
 
     <script>
         // small helpers
         document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // video control
+        function toggleVideo(videoId, btn) {
+            const video = document.getElementById(videoId);
+            if (video.paused) {
+                video.play();
+                btn.textContent = '⏸ Pause';
+            } else {
+                video.pause();
+                btn.textContent = '▶ Play Demo';
+            }
+        }
+
+        // fullscreen control
+        function toggleFullscreen(videoId) {
+            const el = document.getElementById(videoId);
+            const isFull = document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
+            if (!isFull) {
+                if (el.requestFullscreen) el.requestFullscreen();
+                else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+                else if (el.msRequestFullscreen) el.msRequestFullscreen();
+            } else {
+                if (document.exitFullscreen) document.exitFullscreen();
+                else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+                else if (document.msExitFullscreen) document.msExitFullscreen();
+            }
+        }
     </script>
 </body>
 </html>
